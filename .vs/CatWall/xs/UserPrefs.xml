@@ -1,0 +1,15 @@
+﻿<Properties StartupConfiguration="{E76FEC1A-040E-F372-25CE-6C3920A6096E}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Take_Screenshot.cs">
+    <Files>
+      <File FileName="Assets/Scripts/Change_Object.cs" Line="30" Column="47" />
+      <File FileName="Assets/Scripts/Take_Screenshot.cs" Line="44" Column="70" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="b83494b3-ba56-42c6-9485-dcc614ef8b9f" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

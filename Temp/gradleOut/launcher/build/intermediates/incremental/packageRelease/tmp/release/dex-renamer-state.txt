@@ -1,0 +1,4 @@
+#Fri Jan 31 21:43:54 CLST 2020
+base.0=/Users/mrham/CatWall/Temp/gradleOut/launcher/build/intermediates/transforms/dexMerger/release/0
+path.0=classes.dex
+renamed.0=classes.dex

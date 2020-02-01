@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+#if PLATFORM_ANDROID
+
+#endif
+
 public class Take_Screenshot : MonoBehaviour
 {
     bool takeSS;
@@ -11,26 +15,59 @@ public class Take_Screenshot : MonoBehaviour
 
     int SScount;
 
-    [SerializeField] TextMeshProUGUI path;
+    //[SerializeField] TextMeshProUGUI path;
 
     private void Awake()
     {
         cam = gameObject.GetComponent<Camera>();
     }
 
+    protected const string MEDIA_STORE_IMAGE_MEDIA = "android.provider.MediaStore$Images$Media";
+    protected static AndroidJavaObject m_Activity;
+
+    protected static string SaveImageToGallery(Texture2D a_Texture, string a_Title, string a_Description)
+    {
+        using (AndroidJavaClass mediaClass = new AndroidJavaClass(MEDIA_STORE_IMAGE_MEDIA))
+        {
+            using (AndroidJavaObject contentResolver = Activity.Call<AndroidJavaObject>("getContentResolver"))
+            {
+                AndroidJavaObject image = Texture2DToAndroidBitmap(a_Texture);
+                return mediaClass.CallStatic<string>("insertImage", contentResolver, image, a_Title, a_Description);
+            }
+        }
+    }
+
+    protected static AndroidJavaObject Texture2DToAndroidBitmap(Texture2D a_Texture)
+    {
+        byte[] encodedTexture = a_Texture.EncodeToPNG();
+        using (AndroidJavaClass bitmapFactory = new AndroidJavaClass("android.graphics.BitmapFactory"))
+        {
+            return bitmapFactory.CallStatic<AndroidJavaObject>("decodeByteArray", encodedTexture, 0, encodedTexture.Length);
+        }
+    }
+
+    protected static AndroidJavaObject Activity
+    {
+        get
+        {
+            if (m_Activity == null)
+            {
+                AndroidJavaClass unityPlayer = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
+                m_Activity = unityPlayer.GetStatic<AndroidJavaObject>("currentActivity");
+            }
+            return m_Activity;
+        }
+    }
+
     private void OnPostRender()
     {
         if (takeSS) {
-            
-            string fileName = "Screenshot" + SScount + ".png";
-            string folderLocation = "/storage/emulated/0/CatWall/";
-            string ssLocation = folderLocation + fileName;
+            takeSS = false;
+            string fileName = "Screenshot" + "-"+ System.DateTime.Now.Day + "-" + System.DateTime.Now.Hour +"-"+ System.DateTime.Now.Minute +"-" +
+                              System.DateTime.Now.Second + ".png";
             string defaultLocation = Application.persistentDataPath + "/" + fileName;
 
-            if (!System.IO.Directory.Exists(folderLocation))
-            {
-                System.IO.Directory.CreateDirectory(folderLocation);
-            }
+            //path.text = defaultLocation;
 
             #region Screenshot itself
             RenderTexture renderTexture = cam.targetTexture;
@@ -42,23 +79,12 @@ public class Take_Screenshot : MonoBehaviour
 
             byte[] byteArray = renderResult.EncodeToPNG();
             System.IO.File.WriteAllBytes(defaultLocation, byteArray);
-            SScount++;
+
+            string path = SaveImageToGallery(renderResult, fileName, defaultLocation);
+
             RenderTexture.ReleaseTemporary(renderTexture);
             cam.targetTexture = null;
             #endregion
-
-            //MOVE THE SCREENSHOT WHERE WE WANT IT TO BE STORED
-            System.IO.File.Move(defaultLocation, ssLocation);
-
-            //REFRESHING THE ANDROID PHONE PHOTO GALLERY IS BEGUN
-            //AndroidJavaClass classPlayer = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
-            //AndroidJavaObject objActivity = classPlayer.GetStatic<AndroidJavaObject>("currentActivity");
-            //AndroidJavaClass classUri = new AndroidJavaClass("android.net.Uri");
-            //AndroidJavaObject objIntent = new AndroidJavaObject("android.content.Intent", new object[2] { "android.intent.action.MEDIA_MOUNTED",
-            //                                                    classUri.CallStatic<AndroidJavaObject>("parse", "file://" + ssLocation) });
-            //objActivity.Call("sendBroadcast", objIntent);
-
-            takeSS = false;
         }
     }
 
@@ -66,5 +92,7 @@ public class Take_Screenshot : MonoBehaviour
         cam.targetTexture = RenderTexture.GetTemporary(Screen.width, Screen.height, 16);
         takeSS = true;
     }
+
+
 
 }

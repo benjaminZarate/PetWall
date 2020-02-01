@@ -2,12 +2,12 @@
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Take_Screenshot.cs">
     <Files>
       <File FileName="Assets/Scripts/Change_Object.cs" Line="30" Column="47" />
-      <File FileName="Assets/Scripts/Take_Screenshot.cs" Line="44" Column="70" />
+      <File FileName="Assets/Scripts/Take_Screenshot.cs" Line="70" Column="43" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="b83494b3-ba56-42c6-9485-dcc614ef8b9f" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="7daf4cc1-210d-4590-a532-34cc86a6318b" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

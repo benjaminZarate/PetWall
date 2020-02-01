@@ -12,7 +12,7 @@ public class Change_Object : MonoBehaviour
 
     [SerializeField] TextMeshProUGUI currentSprite;
 
-    int index = 0;
+    [HideInInspector] public int index = 0;
 
     public void NextObject(int dir)
     {

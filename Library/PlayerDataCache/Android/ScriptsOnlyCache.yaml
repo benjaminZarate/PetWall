@@ -1,7 +1,10 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - Banner_Ads
+    - Change_Accesories_Position
     - Change_Object
+    - Show_Hide
     - Take_Screenshot
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridPaintingState
@@ -21,6 +24,9 @@ ScriptsOnlyBuild:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
     - UnityEditor.TestTools.TestRunner.TestListCacheData
     - UnityEditor.TestTools.TestRunner.TestRun.TestJobDataHolder
+    UnityEngine.Advertisements.dll:
+    - UnityEngine.Advertisements.Placeholder
+    - UnityEngine.Advertisements.Platform.Editor.BannerPlaceholder
     UnityEngine.UI.dll:
     - UnityEngine.EventSystems.EventSystem
     - UnityEngine.EventSystems.StandaloneInputModule
@@ -29,7 +35,6 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.GridLayoutGroup
     - UnityEngine.UI.Image
-    - UnityEngine.UI.RawImage
   sceneClasses:
     Assets/Scenes/SampleScene.unity:
     - Class: 1
@@ -53,35 +58,39 @@ ScriptsOnlyBuild:
     - Class: 109
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11186}
+      Script: {instanceID: 11172}
     - Class: 114
-      Script: {instanceID: 11318}
+      Script: {instanceID: 11300}
     - Class: 114
-      Script: {instanceID: 11402}
+      Script: {instanceID: 11384}
     - Class: 114
-      Script: {instanceID: 11458}
+      Script: {instanceID: 11438}
     - Class: 114
-      Script: {instanceID: 11822}
+      Script: {instanceID: 11798}
     - Class: 114
-      Script: {instanceID: 11848}
+      Script: {instanceID: 11824}
     - Class: 114
-      Script: {instanceID: 12122}
+      Script: {instanceID: 12096}
     - Class: 114
-      Script: {instanceID: 12236}
+      Script: {instanceID: 12208}
     - Class: 114
-      Script: {instanceID: 12258}
+      Script: {instanceID: 12440}
     - Class: 114
-      Script: {instanceID: 12468}
+      Script: {instanceID: 12454}
     - Class: 114
-      Script: {instanceID: 12482}
+      Script: {instanceID: 12650}
     - Class: 114
-      Script: {instanceID: 12680}
+      Script: {instanceID: 12716}
     - Class: 114
-      Script: {instanceID: 12750}
+      Script: {instanceID: 12884}
     - Class: 114
-      Script: {instanceID: 12920}
+      Script: {instanceID: 13098}
     - Class: 114
-      Script: {instanceID: 13136}
+      Script: {instanceID: 15024}
+    - Class: 114
+      Script: {instanceID: 15974}
+    - Class: 114
+      Script: {instanceID: 19450}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -319,7 +328,7 @@ ScriptsOnlyBuild:
     className: TMP_SpriteAnimator
   - hash:
       serializedVersion: 2
-      Hash: 53c68a3eac6b095e8c8ad362fa2b4325
+      Hash: 3ffe1d8ac91df356d420a5a5af2a9487
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Change_Object
@@ -533,6 +542,54 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 022b0513ff57166bcd5a559250b0ec84
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Show_Hide
+  - hash:
+      serializedVersion: 2
+      Hash: a4ab59432e1a3dc5dedbe8c4cf11d8ef
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Banner_Ads
+  - hash:
+      serializedVersion: 2
+      Hash: 88e2c6f501bf5dead831a3e44c30de40
+    assemblyName: UnityEngine.Advertisements.dll
+    namespaceName: UnityEngine.Advertisements.Platform.Editor
+    className: BannerPlaceholder
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: UnityEngine.Advertisements.dll
+    namespaceName: UnityEngine.Advertisements
+    className: Placeholder
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: UnityEngine.Monetization.dll
+    namespaceName: UnityEngine.Monetization
+    className: Placeholder
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: UnityEngine.Advertisements.dll
+    namespaceName: UnityEngine.Advertisements.Utilities
+    className: ApplicationQuit
+  - hash:
+      serializedVersion: 2
+      Hash: a325152ad9563ed900af221c132fea36
+    assemblyName: UnityEngine.Advertisements.dll
+    namespaceName: UnityEngine.Advertisements.Utilities
+    className: CoroutineExecutor
+  - hash:
+      serializedVersion: 2
+      Hash: b2080af332454b9956ad6126e7fa6ea7
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Change_Accesories_Position
   platform: 13
   scenePathNames:
   - Assets/Scenes/SampleScene.unity

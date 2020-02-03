@@ -1,16 +1,17 @@
 ﻿<Properties StartupConfiguration="{E76FEC1A-040E-F372-25CE-6C3920A6096E}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Change_Accesories_Position.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Take_Screenshot.cs">
     <Files>
-      <File FileName="Assets/Scripts/Change_Object.cs" Line="30" Column="47" />
-      <File FileName="Assets/Scripts/Take_Screenshot.cs" Line="70" Column="43" />
-      <File FileName="Assets/Scripts/Show_Hide.cs" Line="17" Column="32" />
-      <File FileName="Assets/Scripts/Banner_Ads.cs" Line="14" Column="36" />
-      <File FileName="Assets/Scripts/Change_Accesories_Position.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Change_Object.cs" Line="15" Column="23" />
+      <File FileName="Assets/Scripts/Take_Screenshot.cs" Line="70" Column="15" />
+      <File FileName="Assets/Scripts/Show_Hide.cs" />
+      <File FileName="Assets/Scripts/Banner_Ads.cs" />
+      <File FileName="Assets/Scripts/Change_Accesories_Position.cs" />
+      <File FileName="Assets/Scripts/Show_Preview.cs" Line="25" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="ecc73f88-cffa-4682-82f4-3f7445c8163f" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="f3b0fb6b-08d4-4d3d-aa7f-3edd8609041f" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -1,11 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
-
-#if PLATFORM_ANDROID
-
-#endif
+using UnityEngine.UI;
 
 public class Take_Screenshot : MonoBehaviour
 {
@@ -15,14 +11,16 @@ public class Take_Screenshot : MonoBehaviour
 
     int SScount;
 
-    //[SerializeField] TextMeshProUGUI path;
+    [SerializeField] RawImage preview;
+    [SerializeField] Show_Preview show;
 
     private void Awake()
     {
         cam = gameObject.GetComponent<Camera>();
     }
 
-    protected const string MEDIA_STORE_IMAGE_MEDIA = "android.provider.MediaStore$Images$Media";
+   protected const string MEDIA_STORE_IMAGE_MEDIA = "android.provider.MediaStore$Images$Media";
+
     protected static AndroidJavaObject m_Activity;
 
     protected static string SaveImageToGallery(Texture2D a_Texture, string a_Title, string a_Description)
@@ -63,16 +61,21 @@ public class Take_Screenshot : MonoBehaviour
     {
         if (takeSS) {
             takeSS = false;
+            
             string fileName = "Screenshot" + "-"+ System.DateTime.Now.Day + "-" + System.DateTime.Now.Hour +"-"+ System.DateTime.Now.Minute +"-" +
                               System.DateTime.Now.Second + ".png";
+            
             string defaultLocation = Application.persistentDataPath + "/" + fileName;
-
+            
+            //string defaultLocation = Application.dataPath + "/" + fileName;
+            
             //path.text = defaultLocation;
 
             #region Screenshot itself
             RenderTexture renderTexture = cam.targetTexture;
 
             Texture2D renderResult = new Texture2D(renderTexture.width, renderTexture.height, TextureFormat.ARGB32, false);
+            
 
             Rect rect = new Rect(0, 0, renderTexture.width, renderTexture.height);
             renderResult.ReadPixels(rect, 0, 0);
@@ -80,10 +83,17 @@ public class Take_Screenshot : MonoBehaviour
             byte[] byteArray = renderResult.EncodeToPNG();
             System.IO.File.WriteAllBytes(defaultLocation, byteArray);
 
+            renderResult.LoadImage(byteArray);
+
+            preview.texture = renderResult;
+            preview.mainTexture.IncrementUpdateCount();
+
             string path = SaveImageToGallery(renderResult, fileName, defaultLocation);
+
 
             RenderTexture.ReleaseTemporary(renderTexture);
             cam.targetTexture = null;
+            show.Activate();
             #endregion
         }
     }

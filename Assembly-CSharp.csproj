@@ -77,6 +77,7 @@
     <Compile Include="Assets\Scripts\Banner_Ads.cs" />
     <Compile Include="Assets\Scripts\Change_Accesories_Position.cs" />
     <Compile Include="Assets\Scripts\Change_Object.cs" />
+    <Compile Include="Assets\Scripts\Preview_Behaviour.cs" />
     <Compile Include="Assets\Scripts\Show_Hide.cs" />
     <Compile Include="Assets\Scripts\Show_Preview.cs" />
     <Compile Include="Assets\Scripts\Take_Screenshot.cs" />
@@ -312,14 +313,14 @@
     <Reference Include="Facebook.Unity">
       <HintPath>/Users/mrham/CatWall/Assets/FacebookSDK/Plugins/Facebook.Unity.dll</HintPath>
     </Reference>
-    <Reference Include="FacebookNamedPipeClient">
-      <HintPath>/Users/mrham/CatWall/Assets/FacebookSDK/Plugins/Gameroom/FacebookNamedPipeClient.dll</HintPath>
+    <Reference Include="Facebook.Unity.Settings">
+      <HintPath>/Users/mrham/CatWall/Assets/FacebookSDK/Plugins/Settings/Facebook.Unity.Settings.dll</HintPath>
     </Reference>
     <Reference Include="Facebook.Unity.Gameroom">
       <HintPath>/Users/mrham/CatWall/Assets/FacebookSDK/Plugins/Gameroom/Facebook.Unity.Gameroom.dll</HintPath>
     </Reference>
-    <Reference Include="Facebook.Unity.Settings">
-      <HintPath>/Users/mrham/CatWall/Assets/FacebookSDK/Plugins/Settings/Facebook.Unity.Settings.dll</HintPath>
+    <Reference Include="FacebookNamedPipeClient">
+      <HintPath>/Users/mrham/CatWall/Assets/FacebookSDK/Plugins/Gameroom/FacebookNamedPipeClient.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.iOS.Extensions.Xcode">
       <HintPath>/Applications/Unity/Hub/Editor/2019.3.0f6/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>

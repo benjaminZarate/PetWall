@@ -68,6 +68,8 @@ public class Take_Screenshot : MonoBehaviour
             string defaultLocation = Application.persistentDataPath + "/" + fileName;
             
             //string defaultLocation = Application.dataPath + "/" + fileName;
+
+            Preview_Behaviour.Instance.ssName = defaultLocation;
             
             //path.text = defaultLocation;
 
@@ -81,6 +83,7 @@ public class Take_Screenshot : MonoBehaviour
             renderResult.ReadPixels(rect, 0, 0);
 
             byte[] byteArray = renderResult.EncodeToPNG();
+            Preview_Behaviour.Instance.ss = byteArray;
             System.IO.File.WriteAllBytes(defaultLocation, byteArray);
 
             renderResult.LoadImage(byteArray);

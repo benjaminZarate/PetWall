@@ -1,10 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.Advertisements;
 
 public class Show_Preview : MonoBehaviour
 {
     Animator _anim;
+    
 
     private void Start()
     {
@@ -22,6 +25,9 @@ public class Show_Preview : MonoBehaviour
         _anim.SetBool("Out", true);
     }
 
-
+    public void BigPreview(RawImage raw) {
+        Advertisement.Banner.Hide();
+        raw.texture = GetComponent<RawImage>().texture;
+    }
 
 }

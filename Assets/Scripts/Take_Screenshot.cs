@@ -18,8 +18,8 @@ public class Take_Screenshot : MonoBehaviour
     {
         cam = gameObject.GetComponent<Camera>();
     }
-
-   protected const string MEDIA_STORE_IMAGE_MEDIA = "android.provider.MediaStore$Images$Media";
+#if PLATFORM_ANDROID
+    protected const string MEDIA_STORE_IMAGE_MEDIA = "android.provider.MediaStore$Images$Media";
 
     protected static AndroidJavaObject m_Activity;
 
@@ -56,6 +56,7 @@ public class Take_Screenshot : MonoBehaviour
             return m_Activity;
         }
     }
+#endif
 
     private void OnPostRender()
     {
@@ -93,6 +94,7 @@ public class Take_Screenshot : MonoBehaviour
 
             string path = SaveImageToGallery(renderResult, fileName, defaultLocation);
 
+            VoxelBusterManager.Instance.texture = renderResult;
 
             RenderTexture.ReleaseTemporary(renderTexture);
             cam.targetTexture = null;

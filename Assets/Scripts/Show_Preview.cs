@@ -6,11 +6,13 @@ using UnityEngine.Advertisements;
 
 public class Show_Preview : MonoBehaviour
 {
-    Animator _anim;
-    
+    [HideInInspector] public Animator _anim;
+
+    public static Show_Preview Instance;
 
     private void Start()
     {
+        Instance = this;
         _anim = GetComponent<Animator>();
     }
 
@@ -27,6 +29,11 @@ public class Show_Preview : MonoBehaviour
 
     public void BigPreview(RawImage raw) {
         Advertisement.Banner.Hide();
+        raw.color = new Color(255, 255, 255, 255);
+        for (int i = 0; i < raw.transform.childCount; i++)
+        {
+            raw.transform.GetChild(i).gameObject.SetActive(true);
+        }
         raw.texture = GetComponent<RawImage>().texture;
     }
 

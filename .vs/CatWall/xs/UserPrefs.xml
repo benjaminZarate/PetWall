@@ -1,18 +1,19 @@
 ﻿<Properties StartupConfiguration="{E76FEC1A-040E-F372-25CE-6C3920A6096E}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Preview_Behaviour.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/VoxelBusterManager.cs">
     <Files>
       <File FileName="Assets/Scripts/Change_Object.cs" Line="15" Column="23" />
-      <File FileName="Assets/Scripts/Take_Screenshot.cs" Line="91" Column="15" />
-      <File FileName="Assets/Scripts/Show_Hide.cs" />
+      <File FileName="Assets/Scripts/Take_Screenshot.cs" Line="71" Column="15" />
+      <File FileName="Assets/Scripts/Show_Hide.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/Banner_Ads.cs" />
       <File FileName="Assets/Scripts/Change_Accesories_Position.cs" />
-      <File FileName="Assets/Scripts/Show_Preview.cs" Line="30" Column="40" />
-      <File FileName="Assets/Scripts/Preview_Behaviour.cs" Line="7" Column="23" />
+      <File FileName="Assets/Scripts/Show_Preview.cs" Line="9" Column="23" />
+      <File FileName="Assets/Scripts/Preview_Behaviour.cs" Line="30" Column="56" />
+      <File FileName="Assets/Scripts/VoxelBusterManager.cs" Line="22" Column="42" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="5ac711ac-98d7-45d4-9887-40f57d448499" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="7ad85798-2ac4-4bf2-bc79-679d25098941" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

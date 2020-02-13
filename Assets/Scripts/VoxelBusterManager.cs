@@ -15,6 +15,12 @@ public class VoxelBusterManager : MonoBehaviour
         Instance = this;
     }
 
+    public void RateMyApp() {
+        if (Application.platform == RuntimePlatform.Android) {
+            NPBinding.Utility.OpenStoreLink("com.veinteveinteStudio.CatWall");
+         }
+    }
+
     public void ShareSheet() {
         ShareSheet _shareSheet = new ShareSheet();
 

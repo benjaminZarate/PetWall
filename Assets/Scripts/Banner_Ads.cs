@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Advertisements;
+using UnityEngine.Monetization;
 
 public class Banner_Ads : MonoBehaviour
 {
@@ -18,12 +19,32 @@ public class Banner_Ads : MonoBehaviour
 
     IEnumerator ShowBannerWhenReady()
     {
-        while (!UnityEngine.Advertisements.Advertisement.IsReady(placementId))
+        while (!Advertisement.IsReady(placementId))
         {
             yield return new WaitForSeconds(0.5f);
         }
         Advertisement.Banner.SetPosition(BannerPosition.BOTTOM_CENTER);
         Advertisement.Banner.Show(placementId);
         ShowBannerWhenReady();
+    }
+
+    public void Ads() {
+        StartCoroutine(ShowAdWhenReady());
+    }
+
+    private IEnumerator ShowAdWhenReady()
+    {
+        while (!Advertisement.IsReady(placementId))
+        {
+            yield return new WaitForSeconds(0.25f);
+        }
+
+        ShowAdPlacementContent ad = null;
+        ad = Monetization.GetPlacementContent(placementId) as ShowAdPlacementContent;
+
+        if (ad != null)
+        {
+            ad.Show();
+        }
     }
 }

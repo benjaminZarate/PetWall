@@ -78,6 +78,7 @@
     <Compile Include="Assets\Scripts\Change_Accesories_Position.cs" />
     <Compile Include="Assets\Scripts\Change_Object.cs" />
     <Compile Include="Assets\Scripts\Preview_Behaviour.cs" />
+    <Compile Include="Assets\Scripts\Safe_Area.cs" />
     <Compile Include="Assets\Scripts\Show_Hide.cs" />
     <Compile Include="Assets\Scripts\Show_Preview.cs" />
     <Compile Include="Assets\Scripts\Take_Screenshot.cs" />

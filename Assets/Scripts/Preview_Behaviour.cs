@@ -8,25 +8,37 @@ public class Preview_Behaviour : MonoBehaviour
     [HideInInspector]public string ssName;
     [HideInInspector]public byte[] ss;
 
+    [SerializeField] GameObject childs;
+
     public static Preview_Behaviour Instance;
+
+    public AudioSource click;
+
+    RawImage image;
 
     private void Start()
     {
         Instance = this;
-        this.GetComponent<RawImage>().color = new Color(255, 255, 255, 0);
-        for (int i = 0; i < this.transform.childCount; i++)
-        {
-            this.transform.GetChild(i).gameObject.SetActive(false);
+        image = GetComponent<RawImage>();
+        //image.color = new Color(255, 255, 255, 0);
+        image.gameObject.SetActive(false);
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape)) {
+            if (this.gameObject.activeSelf) {
+                Close();
+            }
         }
     }
 
     public void Close()
     {
-        this.GetComponent<RawImage>().color = new Color(255,255,255,0);
-        for (int i = 0; i < this.transform.childCount; i++) 
-        {
-            this.transform.GetChild(i).gameObject.SetActive(false);
-        }
+        click.Play();
+        //image.color = new Color(255,255,255,0);
+        image.gameObject.SetActive(false);
+        //childs.SetActive(false);
         Show_Preview.Instance._anim.SetBool("Out", true);
         UnityEngine.Advertisements.Advertisement.Banner.Show();
     }

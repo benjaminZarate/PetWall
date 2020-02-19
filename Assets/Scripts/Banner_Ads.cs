@@ -7,7 +7,8 @@ using UnityEngine.Monetization;
 public class Banner_Ads : MonoBehaviour
 {
     public string gameId = "1234567";
-    public string placementId = "bannerPlacement";
+    public string placementIdBanner = "bannerPlacement";
+    public string placementIdFull = "fullPlacement";
     public bool testMode = true;
 
     void Start()
@@ -19,12 +20,12 @@ public class Banner_Ads : MonoBehaviour
 
     IEnumerator ShowBannerWhenReady()
     {
-        while (!Advertisement.IsReady(placementId))
+        while (!Advertisement.IsReady(placementIdBanner))
         {
             yield return new WaitForSeconds(0.5f);
         }
         Advertisement.Banner.SetPosition(BannerPosition.BOTTOM_CENTER);
-        Advertisement.Banner.Show(placementId);
+        Advertisement.Banner.Show(placementIdBanner);
         ShowBannerWhenReady();
     }
 
@@ -34,17 +35,11 @@ public class Banner_Ads : MonoBehaviour
 
     private IEnumerator ShowAdWhenReady()
     {
-        while (!Advertisement.IsReady(placementId))
+        while (!Advertisement.IsReady(placementIdFull))
         {
             yield return new WaitForSeconds(0.25f);
         }
 
-        ShowAdPlacementContent ad = null;
-        ad = Monetization.GetPlacementContent(placementId) as ShowAdPlacementContent;
-
-        if (ad != null)
-        {
-            ad.Show();
-        }
+        Advertisement.Show(placementIdFull);
     }
 }

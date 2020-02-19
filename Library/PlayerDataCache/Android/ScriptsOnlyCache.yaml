@@ -22,6 +22,8 @@ ScriptsOnlyBuild:
     - UnityEditor.Tilemaps.TileDragAndDropManager
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
+    Unity.TextMeshPro.Editor.dll:
+    - TMPro.EditorUtilities.TMPro_FontAssetCreatorWindow
     Unity.TextMeshPro.dll:
     - TMPro.TMP_FontAsset
     - TMPro.TMP_Settings
@@ -38,9 +40,6 @@ ScriptsOnlyBuild:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
     - UnityEditor.TestTools.TestRunner.TestListCacheData
     - UnityEditor.TestTools.TestRunner.TestRun.TestJobDataHolder
-    UnityEngine.Advertisements.dll:
-    - UnityEngine.Advertisements.Placeholder
-    - UnityEngine.Advertisements.Platform.Editor.BannerPlaceholder
     UnityEngine.UI.dll:
     - UnityEngine.EventSystems.EventSystem
     - UnityEngine.EventSystems.StandaloneInputModule
@@ -69,6 +68,10 @@ ScriptsOnlyBuild:
     - Class: 74
       Script: {instanceID: 0}
     - Class: 81
+      Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
       Script: {instanceID: 0}
     - Class: 91
       Script: {instanceID: 0}
@@ -121,13 +124,13 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 14470}
     - Class: 114
-      Script: {instanceID: 14782}
+      Script: {instanceID: 14726}
     - Class: 114
-      Script: {instanceID: 14800}
+      Script: {instanceID: 14784}
     - Class: 114
-      Script: {instanceID: 15130}
+      Script: {instanceID: 14802}
     - Class: 114
-      Script: {instanceID: 17402}
+      Script: {instanceID: 15132}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -197,7 +200,7 @@ ScriptsOnlyBuild:
     className: TMP_ScrollbarEventHandler
   - hash:
       serializedVersion: 2
-      Hash: 4c39f95968acf5f07187fbc4f8f32879
+      Hash: 22eb9dde81ae2952b5ca8a7c70780567
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Take_Screenshot
@@ -497,7 +500,7 @@ ScriptsOnlyBuild:
     className: GUIMenuBase
   - hash:
       serializedVersion: 2
-      Hash: b28cde3bc285fec6800feb34f3498ba1
+      Hash: 55b947b1fabbc75c7ade6da09b90afda
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Show_Preview
@@ -527,7 +530,7 @@ ScriptsOnlyBuild:
     className: VoxelBusterManager
   - hash:
       serializedVersion: 2
-      Hash: a4ab59432e1a3dc5dedbe8c4cf11d8ef
+      Hash: 1d53827f09e9c55649de6ea8a64f8d67
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Banner_Ads
@@ -605,7 +608,7 @@ ScriptsOnlyBuild:
     className: LogView
   - hash:
       serializedVersion: 2
-      Hash: 022b0513ff57166bcd5a559250b0ec84
+      Hash: 25a1f1389fb2263bedd2f3f126b185da
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Show_Hide
@@ -701,7 +704,7 @@ ScriptsOnlyBuild:
     className: SharingEditor
   - hash:
       serializedVersion: 2
-      Hash: 3ffe1d8ac91df356d420a5a5af2a9487
+      Hash: fee46c15859ce9bba1ed347746b2c8fa
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Change_Object
@@ -779,7 +782,7 @@ ScriptsOnlyBuild:
     className: UI
   - hash:
       serializedVersion: 2
-      Hash: 1d0797ded41b321475b8c315172ec77d
+      Hash: a4fc1fd21e60151908ff6aaf4df96856
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Preview_Behaviour
@@ -945,6 +948,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp-firstpass.dll
     namespaceName: VoxelBusters.NativePlugins
     className: NetworkConnectivityAndroid
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Safe_Area
   - hash:
       serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
@@ -1119,12 +1128,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: Safe_Area
   platform: 13
   scenePathNames:
   - Assets/Scenes/SampleScene.unity

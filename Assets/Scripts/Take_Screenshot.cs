@@ -14,10 +14,15 @@ public class Take_Screenshot : MonoBehaviour
     [SerializeField] RawImage preview;
     [SerializeField] Show_Preview show;
 
+    public AudioSource click;
+    public Banner_Ads ads;
+
     private void Awake()
     {
         cam = gameObject.GetComponent<Camera>();
     }
+
+    #region AndroidStuff
 #if PLATFORM_ANDROID
     protected const string MEDIA_STORE_IMAGE_MEDIA = "android.provider.MediaStore$Images$Media";
 
@@ -57,6 +62,7 @@ public class Take_Screenshot : MonoBehaviour
         }
     }
 #endif
+    #endregion
 
     private void OnPostRender()
     {
@@ -98,16 +104,34 @@ public class Take_Screenshot : MonoBehaviour
 
             RenderTexture.ReleaseTemporary(renderTexture);
             cam.targetTexture = null;
-            show.Activate();
             #endregion
+            show.Activate();
+            _ShowAndroidToastMessage("Enjoy your new Wallpaper!");
+            click.Play();
+            ads.Ads();
         }
     }
 
     public void TakeScreenshot() {
+        _ShowAndroidToastMessage("Capturing cutenesss");
         cam.targetTexture = RenderTexture.GetTemporary(Screen.width, Screen.height, 16);
         takeSS = true;
     }
 
+    private void _ShowAndroidToastMessage(string message)
+    {
+        AndroidJavaClass unityPlayer = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
+        AndroidJavaObject unityActivity = unityPlayer.GetStatic<AndroidJavaObject>("currentActivity");
 
+        if (unityActivity != null)
+        {
+            AndroidJavaClass toastClass = new AndroidJavaClass("android.widget.Toast");
+            unityActivity.Call("runOnUiThread", new AndroidJavaRunnable(() =>
+            {
+                AndroidJavaObject toastObject = toastClass.CallStatic<AndroidJavaObject>("makeText", unityActivity, message, 0);
+                toastObject.Call("show");
+            }));
+        }
+    }
 
 }

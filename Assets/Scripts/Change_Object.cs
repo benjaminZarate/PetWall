@@ -14,6 +14,8 @@ public class Change_Object : MonoBehaviour
 
     [HideInInspector] public int index = 0;
 
+    public AudioSource click;
+
     public void NextObject(int dir)
     {
         index += dir;
@@ -28,5 +30,6 @@ public class Change_Object : MonoBehaviour
 
         objectSprite.sprite = objectList[index];
         currentSprite.text = index.ToString();
+        click.Play();
     }
 }

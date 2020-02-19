@@ -10,6 +10,10 @@ public class Show_Preview : MonoBehaviour
 
     public static Show_Preview Instance;
 
+    public AudioSource click;
+
+    public GameObject rawChild;
+
     private void Start()
     {
         Instance = this;
@@ -28,12 +32,10 @@ public class Show_Preview : MonoBehaviour
     }
 
     public void BigPreview(RawImage raw) {
+        click.Play();
         Advertisement.Banner.Hide();
-        raw.color = new Color(255, 255, 255, 255);
-        for (int i = 0; i < raw.transform.childCount; i++)
-        {
-            raw.transform.GetChild(i).gameObject.SetActive(true);
-        }
+        raw.gameObject.SetActive(true);
+        //raw.color = new Color(255, 255, 255, 255);
         raw.texture = GetComponent<RawImage>().texture;
     }
 
